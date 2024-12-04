@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+   <title>Табулювання функції</title>
+   <style type="">
+      body {
+         font-family: Arial, sans-serif;
+         background-color: #f4f4f4;
+         margin: 0;
+         padding: 0;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         height: 100vh;
+         color: #333;
+      }
+
+      h1, h2, h3 {
+         text-align: center;
+         color: #4CAF50;
+      }
+
+      form {
+         background-color: white;
+         padding: 20px;
+         border-radius: 8px;
+         box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+         margin-top: 20px;
+         width: 100%;
+         max-width: 600px;
+      }
+
+      label {
+         display: block;
+         margin-bottom: 8px;
+         font-weight: bold;
+      }
+
+      input[type="text"] {
+         width: 100%;
+         padding: 10px;
+         margin: 10px 0;
+         border: 1px solid #ccc;
+         border-radius: 4px;
+         box-sizing: border-box;
+      }
+
+      input[type="text"]:focus {
+         border-color: #4CAF50;
+         outline: none;
+      }
+
+      button {
+         background-color: #4CAF50;
+         color: white;
+         padding: 10px 20px;
+         border: none;
+         border-radius: 4px;
+         cursor: pointer;
+         font-size: 16px;
+         width: 100%;
+         margin-top: 10px;
+      }
+
+      button:hover {
+         background-color: #45a049;
+      }
+
+      table {
+         width: 100%;
+         border-collapse: collapse;
+         margin-top: 20px;
+      }
+
+      th, td {
+         padding: 10px;
+         text-align: center;
+         border: 1px solid #ddd;
+      }
+
+      th {
+         background-color: #f2f2f2;
+      }
+
+      tr:nth-child(even) {
+         background-color: #f9f9f9;
+      }
+
+      tr:hover {
+         background-color: #f1f1f1;
+      }
+   </style>
+</h:head>
+<h:body>
+   <h1>Таблиця значень функції</h1>
+   <h:form>
+      <h:dataTable value="#{tabulationBean.tabulation.results}" var="row">
+         <h:column headerText="x">
+            <h:outputText value="#{row[0]}"/>
+         </h:column>
+         <h:column headerText="y">
+            <h:outputText value="#{row[1]}"/>
+         </h:column>
+      </h:dataTable>
+      <br/>
+      <h:commandButton value="Назад" action="index.xhtml?faces-redirect=true"/>
+   </h:form>
+</h:body>
+</html>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+<h:head>
+   <title>Введення даних</title>
+   <h:head>
+      <title>Title of the Page</title>
+      <style type="">
+         body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+         }
+
+         h1, h2, h3 {
+            text-align: center;
+            color: #4CAF50;
+         }
+
+         form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            width: 100%;
+            max-width: 600px;
+         }
+
+         label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+         }
+
+         input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+         }
+
+         input[type="text"]:focus {
+            border-color: #4CAF50;
+            outline: none;
+         }
+
+         button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            margin-top: 10px;
+         }
+
+         button:hover {
+            background-color: #45a049;
+         }
+
+         /* Table Styles */
+         table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+         }
+
+         th, td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ddd;
+         }
+
+         th {
+            background-color: #f2f2f2;
+         }
+
+         tr:nth-child(even) {
+            background-color: #f9f9f9;
+         }
+
+         tr:hover {
+            background-color: #f1f1f1;
+         }
+      </style>
+   </h:head>
+
+</h:head>
+<h:body>
+   <h1>Введення даних</h1>
+
+   <h:form>
+      <h2>Обчислення суми ряду (sh(x))</h2>
+      <h:outputLabel for="x" value="x: " />
+      <h:inputText id="x" value="#{mathBean.math.x}" required="true" />
+      <br />
+      <h:outputLabel for="n" value="Кількість доданків (n): " />
+      <h:inputText id="n" value="#{mathBean.math.n}" required="true" />
+      <br />
+      <h:outputLabel for="e" value="Поріг точності (e): " />
+      <h:inputText id="e" value="#{mathBean.math.e}" required="true" />
+      <br />
+      <h:commandButton value="Обчислити" action="#{mathBean.calculateSeries()}" />
+   </h:form>
+
+   <br />
+
+   <h:form>
+      <h2>Табулювання функції</h2>
+      <h:outputLabel for="a" value="Початок (a): " />
+      <h:inputText id="a" value="#{tabulationBean.tabulation.a}" required="true" />
+      <br />
+      <h:outputLabel for="b" value="Кінець (b): " />
+      <h:inputText id="b" value="#{tabulationBean.tabulation.b}" required="true" />
+      <br />
+      <h:outputLabel for="h" value="Крок (h): " />
+      <h:inputText id="h" value="#{tabulationBean.tabulation.h}" required="true" />
+      <br />
+      <h:commandButton value="Табулювати" action="#{tabulationBean.tabulate()}" />
+   </h:form>
+</h:body>
+</html>
